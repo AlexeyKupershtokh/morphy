@@ -1,0 +1,8 @@
+Changes with phpMorphy 0.3.1                                     04 Aug 2009
+    *) Fix bug with "Can`t read next block", while external sort (thanks to falcon)
+    *) delete temp files while merge stage of external sort process
+    *) add -v, --version option to all cli utilites
+    *) some perfomance and memory improvements in morphy_builder
+
+Changes with phpMorphy 0.3.0                                     03 Apr 2009
+    *) first public release

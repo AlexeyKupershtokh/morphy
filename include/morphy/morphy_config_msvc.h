@@ -3,8 +3,8 @@
 
 #define MORPHY_VERSION_MAJOR 0
 #define MORPHY_VERSION_MINOR 3
-#define MORPHY_VERSION_PATCH 0
-#define MORPHY_VERSION "0.3.0"
+#define MORPHY_VERSION_PATCH 1
+#define MORPHY_VERSION "0.3.1"
 
 // headers
 #ifndef HAVE_STDINT_H
@@ -41,34 +41,34 @@
 /* #undef __MORPHY_HAVE_GCC_VISIBILITY */
 
 #if defined(_WIN32) || defined(_WIN64) || defined(WIN32) || defined(WIN64)
-#	define MORPHY_WIN_CONST_DEFINED 1
+#   define MORPHY_WIN_CONST_DEFINED 1
 #else
-#	undef MORPHY_WIN_CONST_DEFINED
+#   undef MORPHY_WIN_CONST_DEFINED
 #endif
 
 // actual stuff
 #ifdef MORPHY_WIN_CONST_DEFINED
-#	define MORPHY_EXPORT __declspec(dllexport)
-#	define MORPHY_IMPORT __declspec(dllimport)
+#   define MORPHY_EXPORT __declspec(dllexport)
+#   define MORPHY_IMPORT __declspec(dllimport)
 #elif defined(__MORPHY_HAVE_GCC_VISIBILITY)
-#	define MORPHY_EXPORT __attribute__ ((visibility("default")))
-#	define MORPHY_IMPORT
+#   define MORPHY_EXPORT __attribute__ ((visibility("default")))
+#   define MORPHY_IMPORT
 #else
-#	define MORPHY_EXPORT
-#	define MORPHY_IMPORT
+#   define MORPHY_EXPORT
+#   define MORPHY_IMPORT
 #endif
 
 
 #ifdef _MSC_VER
-#	define MORPHY_CALLCONV __cdecl
+#   define MORPHY_CALLCONV __cdecl
 #else
-#	define MORPHY_CALLCONV
+#   define MORPHY_CALLCONV
 #endif
 
 #ifdef _MSC_VER
-#	define FORCEINLINE __forceinline
+#   define FORCEINLINE __forceinline
 #else
-#	define FORCEINLINE inline
+#   define FORCEINLINE inline
 #endif
 
 #define __STDC_CONSTANT_MACROS
@@ -76,17 +76,17 @@
 #define __STDC_FORMAT_MACROS
 
 #ifdef HAVE_INTTYPES_H
-#	include <inttypes.h>
+#   include <inttypes.h>
 #else
-#	include "win_compat/pinttypes.h"
+#   include "win_compat/pinttypes.h"
 #endif
 
 #ifdef HAVE_SYS_TYPES_H
-#	include <sys/types.h>
+#   include <sys/types.h>
 #endif
 
 #ifdef HAVE_STDDEF_H
-#	include <stddef.h>
+#   include <stddef.h>
 #endif
 
 #endif // _MORPHY_CONFIG_H
